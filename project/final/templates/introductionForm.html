@@ -1,0 +1,11 @@
+<!-- Introduction page. 
+	 It provides url for display form, insert form, translate form and score form-->
+
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Recipe book</h2>
+    <h3>Click <a href="{{ url_for('insertForm') }}">here</a> to insert recipes</h3>
+    <h3>Click <a href="{{ url_for('displayForm') }}">here</a> to view recipes</h3>
+    <h3>Click <a href="{{ url_for('translateForm') }}">here</a> to translate</h3>
+    <h3>Click <a href="{{ url_for('scoreForm') }}">here</a> to view scores</h3>
+{% endblock %}

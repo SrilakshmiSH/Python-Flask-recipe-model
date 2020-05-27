@@ -1,0 +1,46 @@
+<!-- translate page. It allows the user to select one recipe from a drop-down menu 
+    and translates to different languages.-->
+
+{% extends "layout.html" %}
+{% block content %}
+	<form action="{{ url_for('translateForm') }}" method=post>
+    <h2>Select recipe</h2>
+    <select name=rname>
+    	{% for r in recipenames %}
+    	<option value= "{{r}}" SELECTED>{{r}}</option>"
+    	{% endfor %}
+    </select>
+    <p><input type="submit" value="translate" style="height:50px;width:70px"></p>
+	</form>  
+    <form action="{{ url_for('translateForm') }}" method=post>
+        <style>
+        table , th, td {
+            border: 1px solid black;
+        } 
+        </style>
+        <h3>Translations</h3>
+        <table>
+            <thead style="border: 1px solid black;">
+                <tr>
+                    <th>Language</th>
+                    <th>Translation</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for t in translatedRecipes %}
+                <tr>
+                    {% for j in t %}
+                    <td>{{ j }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <input type="button" value="Click here to select another recipe" style="height:50px;width:200px" onClick="location.href=location.href"></button>
+    </form>
+<!-- Homepage button -->
+    <div style="float:right">
+    <input type="button" value="Homepage" style="height:30px;width:90px" onClick="location.href='../'" />
+	</div>
+{% endblock %}

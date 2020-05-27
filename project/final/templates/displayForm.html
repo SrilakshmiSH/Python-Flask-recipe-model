@@ -1,0 +1,27 @@
+<!-- display page. It displays the elements of the recipe model.-->
+
+{% extends "layout.html" %}
+{% block content %}
+    <h2>View recipes</h2>
+    <style>
+    table, th, td {
+    	border: 1px solid black;
+    }
+	</style>
+	<table>
+		<thead style="border: 1px solid black;">
+			<tr>
+				<th>Title</th>
+				<th>Skillset</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for entry in entries %}
+			<tr>
+				<td>{{entry.title}}</td>
+				<td>{{entry.skillset}}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

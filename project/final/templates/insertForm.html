@@ -1,0 +1,17 @@
+<!-- insert page. It allows the user to insert recipes to the database.-->
+
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Insert recipes</h2>
+    <form action="{{ url_for('insertForm') }}" method=post>
+		<p class="heading">Title - <input type=text name=title required=required>
+		<br>
+		<p class="heading">Skillset - </p>
+		<select name="skillset">
+			<option value="easy">easy</option>
+			<option value="very easy">very easy</option>
+			<option value="difficult">difficult</option>
+		</select>
+	<p><input type=submit value=Insert style="height:50px;width:70px"></p>
+    </form>
+{% endblock %}
